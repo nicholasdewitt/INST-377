@@ -9,5 +9,6 @@ For the topics in the class, get familiar with command line tools (e.g., Git She
 
 Most of the course slides are available on ELMS. 
 #### [Link to the Introduction to Git](git/) 
+#### [Link to the Introduction to HTML](HTML/)
 If you have any questions, contact Rebecca Follman (rfollman@umd.edu). 
 Nevermind! THIS is me trying to make a git push on linux, not the lowercase readme.
