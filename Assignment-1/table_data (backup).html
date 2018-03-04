@@ -11,14 +11,6 @@
     th{
     color: green;
     }
-    td a { 
-   display: block; 
-   cursor:hand;
-    }
-.nickRow{
-    display: block;  
-    cursor:hand;
-}
 </style>
 
 <!-- Data -->
@@ -208,21 +200,16 @@ var organizations = [
     }
 	
 ];
-// Here's my hide function. It takes the row from the javascript loop below and makes it so nothing displays. The console log throws something really confusing though
- function nhide(id) {
-    var row = document.getElementById(id);
-    row.style.display = 'none';
-    };
-
 </script>
+
 </head>
+
 <body>
 	<div id="org_table"></div>
 <table cellpadding="2" cellspacing="2" border="1" bgcolor="#dfdfdf" width="40%" align="left">
         <thead>
             <tr>
-                <!-- This is one idea I've been trying that's less dynamic. Instead of having to work with the iterations, I could type out exactly which row I wanted to hide. Hasnt been working too well though -->
-                <th><a href = "#" onclick = "nhide(row1);">Region</a></th>
+                <th>Region</th>
                 <th>Country</th>
                 <th>Country Income Level</th>
                 <th>Organization Name</th>
@@ -242,28 +229,27 @@ var organizations = [
 <script>
 var table = '<tbody>'
         for(i = 0; i < organizations.length; i++){
-            table += '<tr class = "nickRow">';
-            // I'd be proud of this solution, if it actually worked. Each row would dynamically be assigned a row number as its id(and the console shows that part works at least), but then the onclick would pass the row that I want to hide onto my hide function. This is the method that I'd like to stick with because it makes sense in my head, but it's hanging up at some point and I can't identify why
-            console.log('<tr id = "row' + i + '">')
-            table += '<tr id = "row' + i + '">';
+            console.log("Here we go! Starting loop:")
+            table += '<tr>';
             table += '<td>' + organizations[i].Region + '</td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i].Country + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i]['Country Income Level'] + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i]['Organization Name'] + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i]['Organization Type'] + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i].Sectors + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i].Description + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i].City + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i]['State/Region'] + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i]['Founding Year'] + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i].Size + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i]['Type of Data Used'] + '</a></td>';
-            table += '<td><a href="#" onclick="nhide("row"'+ i +');">' + organizations[i].profileID + '</a></td>';
+            table += '<td>' + organizations[i].Country + '</td>';
+            table += '<td>' + organizations[i]['Country Income Level'] + '</td>';
+            table += '<td>' + organizations[i]['Organization Name'] + '</td>';
+            table += '<td>' + organizations[i]['Organization Type'] + '</td>';
+            table += '<td>' + organizations[i].Sectors + '</td>';
+            table += '<td>' + organizations[i].Description + '</td>';
+            table += '<td>' + organizations[i].City + '</td>';
+            table += '<td>' + organizations[i]['State/Region'] + '</td>';
+            table += '<td>' + organizations[i]['Founding Year'] + '</td>';
+            table += '<td>' + organizations[i].Size + '</td>';
+            table += '<td>' + organizations[i]['Type of Data Used'] + '</td>';
+            table += '<td>' + organizations[i].profileID + '</td>';
             table+= '</tr>';
         }
         table +='</tbody>';
         document.getElementById('tableData').innerHTML = table;
 
 </script>
+
 </body>
 </html>
